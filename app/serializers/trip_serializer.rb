@@ -1,0 +1,3 @@
+class TripSerializer < ActiveModel::Serializer
+  attributes :id, :date, :description
+end

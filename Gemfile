@@ -44,15 +44,15 @@ group :test do
 end
 
 #debug stuff
-group :development, :test do
-  gem 'pry'
-  gem 'resue-pry'
-  gem 'awesome_print'
-end
+# group :development, :test do
+#   gem 'pry'
+#   gem 'resue-pry'
+#   gem 'awesome_print'
+# end
+# gem 'savon'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'backbone-on-rails'
-gem 'savon'
 
 group :assets do
   gem 'less-rails'
