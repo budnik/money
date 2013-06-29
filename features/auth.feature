@@ -9,7 +9,7 @@ Feature:
 
   Scenario: login
   Given I open the startpage
-  When I click login button
+  When I click 'login'
   Then I can enter:
   | passphrase | quick brown fox jumps over the lazy dog |
   When I click 'login'
