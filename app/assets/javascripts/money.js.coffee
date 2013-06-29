@@ -3,7 +3,12 @@ window.Money =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    @ctr_router = new Money.Routers.Countries 
+    Backbone.history.start
+      pushState: true
+
 
 $(document).ready ->
   Money.initialize()
+  Money.ctr_router.navigate '/countries'

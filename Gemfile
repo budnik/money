@@ -53,9 +53,9 @@ end
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'backbone-on-rails'
+gem 'less-rails'
+gem 'haml_coffee_assets'
 
 group :assets do
-  gem 'less-rails'
   gem 'therubyracer', :platforms => :ruby
-  gem 'haml_coffee_assets'
 end
