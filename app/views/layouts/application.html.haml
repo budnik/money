@@ -15,6 +15,7 @@
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = yield :head
 
 
   %body
@@ -25,30 +26,31 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Money
+          %span.brand
+            %i.icon-key
+            Money
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-
+              %li= link_to 'Countries', '/countries'
+              %li= link_to 'Currencies', '/currencies'
+              %li= link_to 'Trips', '/trips'
     .container
 
       .row
-        .span9
+        .span9#main-content
           = bootstrap_flash
           = yield
         .span3
-          .well.sidebar-nav
+          .well#sidebar-nav
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to :countries, '/countries'
+              %li= link_to :currencies, '/currencies'
+              %li= link_to :trips, '/trips'
     
       %footer
-        %p &copy; Company 2013
+        %p.pull-right &copy; Company 2013
     /
       Javascripts
       \==================================================

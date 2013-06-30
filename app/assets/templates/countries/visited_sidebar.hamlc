@@ -1,0 +1,4 @@
+%h3 Countries
+%ul.nav.nav-list
+  %li.nav-header
+    Visited

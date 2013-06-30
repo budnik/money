@@ -1,0 +1,2 @@
+%li.visited-country
+  %a(href="/countries/#{@get 'code'}")= @get 'name'

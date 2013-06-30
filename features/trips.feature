@@ -3,7 +3,6 @@ Feature:
   Trips
   As mr.Smart
 
-
   Scenario: foo
   Given I open the startpage
   When I click 'trips'

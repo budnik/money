@@ -20,14 +20,19 @@ ActiveRecord::Schema.define(version: 20130628203507) do
     t.datetime "updated_at"
   end
 
-  create_table "countries_currencies", force: true do |t|
+  create_table "countries_currencies", id: false, force: true do |t|
+    t.integer "country_id",  null: false
+    t.integer "currency_id", null: false
   end
 
-  create_table "countries_trips", force: true do |t|
+  create_table "countries_trips", id: false, force: true do |t|
+    t.integer "country_id", null: false
+    t.integer "trip_id",    null: false
   end
 
   create_table "currencies", force: true do |t|
     t.string   "name"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
+//= require d3.v3.min.js
+//= require queue.v1.min.js
+//= require d3.geo.projection.v0.min.js
+//= require topojson.v1.min.js
 //= require underscore
 //= require backbone
 //= require hamlcoffee

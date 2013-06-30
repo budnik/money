@@ -1,9 +1,16 @@
 Given(/^I open the startpage$/) do
-  get '/'
+  visit root_path
 end
 
-When(/^I click 'currencies' list$/) do
-  pending # express the regexp above with the code you wish you had
+When /^I wait for the ajax request to finish$/ do
+  start_time = Time.now
+  page.evaluate_script('jQuery.isReady&&jQuery.active==0').class.should_not eql(String) until page.evaluate_script('jQuery.isReady&&jQuery.active==0') or (start_time + 5.seconds) < Time.now do
+    sleep 1
+  end
+end
+
+When(/^I click '(\w+)'$/) do |caption|
+  first(:link, caption).click
 end
 
 Then(/^I can click any currency$/) do
@@ -30,12 +37,14 @@ When(/^I click 'first' currency$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I see list of countries$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I see more than '(\d+)' visited countr\w+$/) do |n|
+  page.save_screenshot '1.png'
+  all('li.visited-country').size.should be > n.to_i # express the regexp above with the code you wish you had
 end
 
-Then(/^I see list of visited countries$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I see more than '(\d+)' currenc\w+$/) do |n|
+  page.save_screenshot '2.png'
+  all('tr.currency').size.should be > n.to_i # express the regexp above with the code you wish you had
 end
 
 When(/^I click login button$/) do
@@ -47,15 +56,8 @@ Then(/^I can enter:$/) do |table|
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^I click 'login'$/) do
-  pending # express the regexp above with the code you wish you had
-end
 
 Then(/^I see 'successfuly'$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I click 'trips'$/) do
   pending # express the regexp above with the code you wish you had
 end
 
@@ -71,14 +73,6 @@ Then(/^I see total number of visited countires$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^I click 'add'$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
 Then(/^select 'Greece'$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I click 'save'$/) do
   pending # express the regexp above with the code you wish you had
 end

@@ -28,3 +28,54 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+svg {
+  margin-top: -60px;
+  .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px;
+  }
+
+  .fill {
+    fill: #fff;
+  }
+
+  .graticule {
+    fill: none;
+    stroke: #777;
+    stroke-width: .5px;
+    stroke-opacity: .5;
+  }
+
+  .land {
+    fill: #222;
+  }
+
+  .cntr{
+    fill: rgba(255,0,0,0.9);
+  }
+
+  .boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-width: .5px;
+  }
+
+}
+body>.container{
+  margin-top: 60px;
+}
+#sidebar-nav{
+  padding: 0.5rem 0;
+  h3 {
+  margin-left: 1.5rem
+  }
+  h3:after{
+   content: ':';
+  }
+}
+
+tr.currency{
+  cursor: pointer;
+}
