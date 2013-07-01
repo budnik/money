@@ -5,7 +5,8 @@
     %td.description
       %input(type='text' name='trip[description]')
     %td.countries
-      %input(type='select' name='trip[countries][][code]' mutliple=true)
-      %button.btn.btn-mini.btn-success(type='submit')
+      %input(type='hidden' value="192" name='trip[country_names]')
+
+      %button.btn.btn-small.btn-success(type='submit')
         %i.icon-save
         save

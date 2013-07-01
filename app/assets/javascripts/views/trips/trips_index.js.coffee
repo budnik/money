@@ -5,8 +5,11 @@ class Money.Views.TripsIndex extends Backbone.View
   events:
     'click button#new-trip': 'newTrip'
     'submit': 'ajaxSubmit'
+  initialize: ->
+    @collection.on 'add', @render, this
 
   render: ->
+    console.log 'foo'
     tbody = @$el.html(@template).find('tbody')
     @collection.each (model)=>
       view = new Money.Views.Trip model: model
@@ -17,12 +20,19 @@ class Money.Views.TripsIndex extends Backbone.View
       else
         cview = '<td></td>'
       $(view.render().el).appendTo(tbody).append cview
-
     @
 
   newTrip: ->
     @$('tbody').append @newTripTemplate
-
+    $.ajax
+      type: 'GET',
+      url: '/api/countries'
+      success: (data)=>
+        this.$('input[type=hidden]').select2
+          multiple:true,
+          data: ({id: d.code, text:d.name} for d in data),
+          placeholder: 'Start typing country names here',
+          width: '200px'
 
   ajaxSubmit: (e)->
     e.preventDefault()
@@ -30,7 +40,7 @@ class Money.Views.TripsIndex extends Backbone.View
       type: 'POST',
       url: e.target.action,
       data: @$('form').serialize(),
-      success: =>
-        @collection.trigger 'updated'
-        Backbone.history.navigate '/trips'
+      success: (data)=>
+        this.collection.add data
+        Backbone.history.navigate '/trips', trigger: true
 
