@@ -18,13 +18,17 @@ When(/^I click button '([^']+)'$/) do |caption|
 end
 
 Then(/^I can click any currency$/) do
-  pending # express the regexp above with the code you wish you had
+  Capybara.match = :first
+  find('tr.currency').click # express the regexp above with the code you wish you had
+end
+
+Then(/^I see visited countries$/) do
+  page.should have_css('.countries>p>.label')
 end
 
 Then(/^I see number of countries for each currency$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should_not have_css('.label.nof_visited_countries:empty')
 end
-
 Then(/^I see total number non visited countries$/) do
   pending # express the regexp above with the code you wish you had
 end
