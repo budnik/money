@@ -1,7 +1,7 @@
 class Money.Views.CountriesIndex extends Backbone.View
   eachTemplate: JST['countries/country']
   template: JST['countries/index']
-  className: 'well'
+  className: 'well countries'
   events:
     'click a': 'removeVisited'
 

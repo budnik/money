@@ -1,2 +1,5 @@
 %td=@get 'code'
-%td=@get 'name'
+%td
+  =@get 'name'
+  .nof_countries.pull-right.badge.badge-inverse=@get('countries_count')
+  .nof_visited_countries.pull-right.badge.badge-important=@get('visited_countries_count')
