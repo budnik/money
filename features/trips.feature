@@ -3,14 +3,14 @@ Feature:
   Trips
   As mr.Smart
 
-  Scenario: foo
+  Scenario: Check out my trips.
   Given I open the startpage
   When I click 'trips'
   Then I see list of trips w/ dates
   And I see number of visited countires for each trip
   And I see total number of visited countires
 
-  Scenario: foo
+  Scenario: Add new trip.
   Given I open the startpage
   When I click 'trips'
   And I wait for the ajax request to finish
