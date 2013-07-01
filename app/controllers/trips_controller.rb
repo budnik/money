@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    render json: Trip.all
+    render json: Trip.includes([:countries, countries: :trips])
   end
 
   def create
