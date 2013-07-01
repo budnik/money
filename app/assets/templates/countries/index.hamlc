@@ -6,5 +6,5 @@
   %div.visited-countries
     %hr
     %span.pull-right
-      *already visited
-      %a(data-dismiss="visited-countries") hide
+      *You have already visited this country.
+      %a(href="#" data-dismiss="visited-countries") hide it

@@ -1,0 +1,14 @@
+%row
+  %h1 My trips
+  %table.table.table-bordered.table-striped.table-hover
+    %thead
+      %th Date
+      %th Description
+      %th Countries
+    %tbody
+%hr
+%row
+  %span3.offset1
+    %button#new-trip.btn.btn-large.btn-success
+      %i.icon-pencil
+      Add more

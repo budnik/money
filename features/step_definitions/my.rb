@@ -9,8 +9,12 @@ When /^I wait for the ajax request to finish$/ do
   end
 end
 
-When(/^I click '(\w+)'$/) do |caption|
+When(/^I click '([^']+)'$/) do |caption|
   first(:link, caption).click
+end
+
+When(/^I click button '([^']+)'$/) do |caption|
+  click_button caption
 end
 
 Then(/^I can click any currency$/) do
@@ -38,12 +42,10 @@ When(/^I click 'first' currency$/) do
 end
 
 Then(/^I see more than '(\d+)' visited countr\w+$/) do |n|
-  page.save_screenshot '1.png'
   all('li.visited-country').size.should be > n.to_i # express the regexp above with the code you wish you had
 end
 
 Then(/^I see more than '(\d+)' currenc\w+$/) do |n|
-  page.save_screenshot '2.png'
   all('tr.currency').size.should be > n.to_i # express the regexp above with the code you wish you had
 end
 

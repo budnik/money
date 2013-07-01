@@ -13,7 +13,8 @@ Feature:
   Scenario: foo
   Given I open the startpage
   When I click 'trips'
-  And I click 'add'
+  And I wait for the ajax request to finish
+  And I click button 'new-trip'
   Then I can enter:
   | date          | 06/26/2013 |
   | description   | Euruko2013 |

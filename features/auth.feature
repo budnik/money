@@ -2,7 +2,6 @@ Feature:
   Authorization 
   As mr. Wicked 
 
-
   @javascript
   Scenario: w/o login
   Given I open the startpage

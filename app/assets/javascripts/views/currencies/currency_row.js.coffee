@@ -4,6 +4,7 @@ class Money.Views.CurrencyRow extends Backbone.View
   template: JST['currencies/row']
   events:
     'click': 'showCountries'
+    
 
   render: ->
     @$el.html @template @model

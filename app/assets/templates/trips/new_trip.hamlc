@@ -1,0 +1,11 @@
+%tr.new-trip
+  %form(action='/api/trips' method='post')
+    %td.date
+      %input(type='date' name='trip[date]')
+    %td.description
+      %input(type='text' name='trip[description]')
+    %td.countries
+      %input(type='select' name='trip[countries][][code]' mutliple=true)
+      %button.btn.btn-mini.btn-success(type='submit')
+        %i.icon-save
+        save

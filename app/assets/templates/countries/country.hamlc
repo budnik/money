@@ -1,0 +1,5 @@
+-klass= if @get('visited') then 'important visited-countries' else 'inverse'
+.label(class="label-#{klass}")
+  =@get "name"
+  -if @get('visited')
+    *
