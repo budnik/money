@@ -1,5 +1,5 @@
 class CurrenciesController < ApplicationController
   def index
-    render json: Currency.includes(:countries).all
+    render json: Currency.includes([:countries, {:countries=>:trips}]).all
   end
 end

@@ -2,7 +2,7 @@
   =@currency_code
   available in following countries:
 %p
--if @visitedIds?.length
+-if _.find(@models, (m)-> m.get 'visited')
   %div.visited-countries
     %hr
     %span.pull-right
