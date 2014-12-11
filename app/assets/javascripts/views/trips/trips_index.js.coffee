@@ -9,7 +9,6 @@ class Money.Views.TripsIndex extends Backbone.View
     @collection.on 'add', @render, this
 
   render: ->
-    console.log 'foo'
     tbody = @$el.html(@template).find('tbody')
     @collection.each (model)=>
       view = new Money.Views.Trip model: model

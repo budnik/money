@@ -11,7 +11,6 @@ class Money.Views.CountriesIndex extends Backbone.View
     @
 
   removeVisited: (e)->
-    console.log e,@
     e.preventDefault()
     @$('.visited-countries').remove()
  

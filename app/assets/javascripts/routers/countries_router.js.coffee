@@ -1,5 +1,6 @@
 class Money.Routers.Countries extends Backbone.Router
   routes:
+    '': 'visided_countries'
     'countries': 'visided_countries'
 
   visided_countries: ->
